@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your account with our secure sign-up form featuring real-time validation, password strength checker, and user-friendly interface built with Bootstrap and JavaScript.">
+    <meta name="keywords" content="sign up form, registration, form validation, bootstrap form, javascript validation, create account, user registration">
+    <meta name="author" content="Vishnu v">
+     <title>Sign Up Form with Validation - Create Your Account</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="CSS/Style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="signup-container">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold text-primary">Create Your Account</h2>
+                <p class="text-muted">Join us today and start your journey</p>
+            </div>
+            
+            <form class="row g-3 needs-validation" novalidate id="signupForm">
+                <!-- Full Name -->
+                <div class="col-12">
+                    <label for="fullName" class="form-label">
+                        <i class="bi bi-person-fill me-2"></i>Full Name
+                    </label>
+                    <input type="text" class="form-control" id="fullName" required minlength="2">
+                    <div class="invalid-feedback">
+                        Please enter your full name (at least 2 characters).
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <!-- Email Address -->
+                <div class="col-12">
+                    <label for="email" class="form-label">
+                        <i class="bi bi-envelope-fill me-2"></i>Email Address
+                    </label>
+                    <input type="email" class="form-control" id="email" required>
+                    <div class="invalid-feedback" id="emailError">
+                        Please provide a valid email address.
+                    </div>
+                    <div class="valid-feedback">
+                        Email looks good!
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="col-md-6">
+                    <label for="password" class="form-label">
+                        <i class="bi bi-lock-fill me-2"></i>Password
+                    </label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="password" required minlength="8">
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                            <i class="bi bi-eye" id="toggleIcon"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength" id="passwordStrength"></div>
+                    <div class="invalid-feedback">
+                        Password must be at least 8 characters long.
+                    </div>
+                    <div class="valid-feedback">
+                        Strong password!
+                    </div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="col-md-6">
+                    <label for="confirmPassword" class="form-label">
+                        <i class="bi bi-lock-fill me-2"></i>Confirm Password
+                    </label>
+                    <input type="password" class="form-control" id="confirmPassword" required>
+                    <div class="invalid-feedback" id="confirmPasswordError">
+                        Passwords do not match.
+                    </div>
+                    <div class="valid-feedback">
+                        Passwords match!
+                    </div>
+                </div>
+
+                <!-- Phone Number (Optional) -->
+                <div class="col-12">
+                    <label for="phone" class="form-label">
+                        <i class="bi bi-telephone-fill me-2"></i>Phone Number (Optional)
+                    </label>
+                    <input type="tel" class="form-control" id="phone" pattern="[0-9\-\+\s\(\)]{10,}">
+                    <div class="invalid-feedback">
+                        Please enter a valid phone number.
+                    </div>   
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="terms" required>
+                        <label class="form-check-label" for="terms">
+                            I agree to the <a href="#" class="text-primary">Terms and Conditions</a> and <a href="#" class="text-primary">Privacy Policy</a>
+                        </label>
+                        <div class="invalid-feedback">
+                            You must agree to the terms and conditions before submitting.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing Emails (Optional) -->
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="newsletter">
+                        <label class="form-check-label" for="newsletter">
+                            I would like to receive marketing emails and updates
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-12 text-center">
+                    <button class="btn btn-primary btn-lg" type="submit" id="submitBtn">
+                        <span class="spinner-border spinner-border-sm me-2 d-none" id="spinner"></span>
+                        Create Account
+                    </button>
+                </div>
+            </form>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                <h5><i class="bi bi-check-circle-fill me-2"></i>Account Created Successfully!</h5>
+                <p>Welcome aboard! Your account has been created successfully.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    
+    <!-- Custom JavaScript -->
+     <script src="JS/Script.js"></script>
+   
+</body>
+</html>
